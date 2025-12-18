@@ -120,3 +120,30 @@ Essas páginas permitem acompanhar os gastos, visualizar informações detalhada
   * Frontend: `http://localhost:5173`
 
 ---
+
+
+## 🗄️ Migrações do Banco de Dados
+
+Caso o **backend apresente problemas relacionados ao banco de dados**, como tabelas não criadas ou erros de migração, é possível aplicar as migrações manualmente.
+
+1. Acesse a pasta do backend:
+
+   ```bash
+   cd Api
+   ```
+
+2. Execute o comando:
+
+   ```bash
+   dotnet ef database update
+   ```
+
+Esse comando irá:
+
+* Criar o banco de dados (caso ainda não exista)
+* Aplicar todas as **migrations pendentes**
+* Sincronizar o esquema do banco com o modelo atual da aplicação
+
+> 💡 **Dica:** certifique-se de que a string de conexão em `appsettings.Development.json` esteja corretamente configurada antes de rodar o comando.
+
+---
